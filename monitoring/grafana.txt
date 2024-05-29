@@ -1,0 +1,17 @@
+sudo docker pull grafana/grafana
+sudo docker volume create grafana-data
+sudo docker container run -v grafana-data -p 3000:3000 --name grafana --network network grafana/grafana
+
+
+
+<dns>:3000
+
+
+admin
+admin
+
+< rename as needed > 
+
+select data source <dns>:9090
+select metric: e.g.  go_memstats_alloc_bytes_total
+'run queries'
